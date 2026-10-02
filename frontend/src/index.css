@@ -1,0 +1,244 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #030508;
+  --foreground: #f8fafc;
+  --card: #090d14;
+  --card-foreground: #f8fafc;
+  --border: rgba(255, 255, 255, 0.08);
+  --muted: #0f1624;
+  --muted-foreground: #94a3b8;
+  --accent: #ff5722;
+}
+
+.light {
+  --background: #06090e;
+  --foreground: #f8fafc;
+  --card: #0c121e;
+  --card-foreground: #f8fafc;
+  --border: rgba(255, 255, 255, 0.1);
+  --muted: #131c2d;
+  --muted-foreground: #94a3b8;
+  --accent: #ff5722;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #030508;
+  color: #f8fafc;
+  overflow-x: hidden;
+  letter-spacing: -0.01em;
+}
+
+/* Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030508;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff5722;
+}
+
+/* Lenis 3D Smooth Inertial Scroll */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* 3D Perspective & Motion */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.perspective-1500 {
+  perspective: 1500px;
+}
+
+.perspective-2000 {
+  perspective: 2000px;
+}
+
+/* Glassmorphism & Cryptox Luxury Styling */
+.glass-panel {
+  background: rgba(12, 17, 26, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(10, 15, 24, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 87, 34, 0.35);
+  border-top-color: rgba(255, 120, 75, 0.5);
+  box-shadow: 0 24px 50px -15px rgba(0, 0, 0, 0.9), 0 0 30px rgba(255, 87, 34, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform: translateY(-4px);
+}
+
+/* Interactive 3D Card Hover */
+.card-3d-tilt {
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+  transform-style: preserve-3d;
+}
+
+.card-3d-tilt:hover {
+  transform: translateY(-6px) rotateX(3deg) rotateY(-2deg) scale(1.01);
+  box-shadow: 0 28px 60px -15px rgba(0, 0, 0, 0.95), 0 0 35px rgba(255, 87, 34, 0.12);
+}
+
+/* Radiant Orange Vortex Light Ring Effect */
+.vortex-container {
+  position: absolute;
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 600px;
+  pointer-events: none;
+  z-index: 0;
+  overflow: visible;
+}
+
+.vortex-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 720px;
+  height: 480px;
+  transform: translate(-50%, -50%) rotate(-12deg);
+  border-radius: 50%;
+  border: 4px solid transparent;
+  background: radial-gradient(ellipse at center, rgba(255, 87, 34, 0.12) 0%, rgba(255, 60, 10, 0.04) 50%, transparent 75%);
+  box-shadow: 
+    0 0 60px rgba(255, 87, 34, 0.4),
+    inset 0 0 80px rgba(255, 60, 10, 0.35),
+    0 0 120px rgba(255, 120, 60, 0.2);
+  filter: blur(12px);
+}
+
+.vortex-ring-inner {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: 620px;
+  height: 380px;
+  transform: translate(-50%, -50%) rotate(15deg);
+  border-radius: 50%;
+  border-top: 3px solid rgba(255, 140, 80, 0.8);
+  border-right: 2px solid rgba(255, 87, 34, 0.5);
+  border-bottom: 1px solid transparent;
+  border-left: 2px solid rgba(255, 60, 10, 0.3);
+  filter: blur(4px);
+  animation: vortexPulse 8s ease-in-out infinite;
+}
+
+.vortex-ambient-glow {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 87, 34, 0.28) 0%, rgba(255, 60, 0, 0.1) 45%, transparent 70%);
+  filter: blur(45px);
+  animation: glowPulse 5s ease-in-out infinite alternate;
+}
+
+/* Floating Badges with 3D Float Motion */
+.floating-chip {
+  background: rgba(14, 20, 32, 0.82);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.7), 0 0 15px rgba(255, 87, 34, 0.05);
+  border-radius: 9999px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #f1f5f9;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.floating-chip:hover {
+  border-color: rgba(255, 87, 34, 0.4);
+  box-shadow: 0 14px 30px -5px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 87, 34, 0.2);
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* Luxury Molten Coral Button */
+.btn-coral {
+  background: linear-gradient(135deg, #ff5722 0%, #ff3b14 100%);
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 10px 25px -5px rgba(255, 87, 34, 0.45), 0 0 20px rgba(255, 87, 34, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-coral:hover {
+  background: linear-gradient(135deg, #ff6b3d 0%, #f44312 100%);
+  box-shadow: 0 14px 32px -4px rgba(255, 87, 34, 0.6), 0 0 30px rgba(255, 87, 34, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px) scale(1.02);
+}
+
+.btn-coral:active {
+  transform: translateY(0px) scale(0.98);
+}
+
+/* Subtle Shimmer for High-End Cards */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-badge {
+  background: linear-gradient(90deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.12) 50%, rgba(255,255,255,0.03) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 4s infinite linear;
+}
